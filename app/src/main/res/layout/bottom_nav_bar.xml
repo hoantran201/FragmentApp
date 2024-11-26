@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
+
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:src="@drawable/btn_home_normal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:contentDescription="Button Home"
+        tools:ignore="HardcodedText"/>
+    <ImageButton
+        android:id="@+id/btnNotification"
+        android:src="@drawable/btn_notification_normal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:contentDescription="Button Notification"
+        tools:ignore="HardcodedText"/>
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:src="@drawable/btn_info_normal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:contentDescription="Button Info"
+        tools:ignore="HardcodedText" />
+    <ImageButton
+        android:id="@+id/btnSetting"
+        android:src="@drawable/btn_settings_normal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:contentDescription="Button Setting"
+        tools:ignore="HardcodedText"/>
+</LinearLayout>

@@ -12,4 +12,5 @@
     <string name="notification">Notification</string>
     <string name="setting">Setting</string>
     <string name="chuyen_doi_giua_cac_trang">Chuyển đổi giữa các trang</string>
+    <string name="error_fragment_not_found">Error: fragment not found</string>
 </resources>

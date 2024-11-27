@@ -16,6 +16,7 @@ class CreateActivity : ComponentActivity() {
 
         toolsBar.findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
             onBackPressed()
+            finish()
         }
     }
 }

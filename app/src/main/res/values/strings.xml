@@ -2,6 +2,7 @@
     <string name="app_name">FragmentApp</string>
     <string name="button_back">Button Back</string>
     <string name="button_add">Button Add</string>
+    <string name="button_submit">Submit</string>
     <string name="create">Create</string>
     <string name="button_home">Button Home</string>
     <string name="button_info">Button Info</string>
@@ -11,6 +12,8 @@
     <string name="info">Info</string>
     <string name="notification">Notification</string>
     <string name="setting">Setting</string>
-    <string name="chuyen_doi_giua_cac_trang">Chuyển đổi giữa các trang</string>
     <string name="error_fragment_not_found">Error: fragment not found</string>
+    <string name="navigation_Page">navigationPage</string>
+    <string name="edt_name">Name</string>
+    <string name="edt_age">Age</string>
 </resources>

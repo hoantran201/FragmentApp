@@ -6,7 +6,7 @@
     android:background="@color/green"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.SettingFragment">
+    tools:context=".ui.fragment.SettingFragment">
 
     <TextView
         android:layout_width="wrap_content"

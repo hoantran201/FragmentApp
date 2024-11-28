@@ -6,7 +6,7 @@
     android:background="@color/yellow"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.InfoFragment">
+    tools:context=".ui.fragment.InfoFragment">
 
     <TextView
         android:layout_width="wrap_content"

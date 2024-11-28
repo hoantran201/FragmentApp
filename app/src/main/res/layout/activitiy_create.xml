@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CreateActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".ui.create.CreateActivity">
 
     <include
         android:id="@+id/topToolsBar"

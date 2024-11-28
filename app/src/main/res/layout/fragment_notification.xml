@@ -6,7 +6,7 @@
     android:background="@color/blue"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.NotificationFragment">
+    tools:context=".ui.fragment.NotificationFragment">
 
     <TextView
         android:layout_width="wrap_content"

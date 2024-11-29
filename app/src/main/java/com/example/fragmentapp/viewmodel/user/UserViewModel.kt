@@ -1,6 +1,5 @@
-package com.example.fragmentapp.viewmodel
+package com.example.fragmentapp.viewmodel.user
 
-import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

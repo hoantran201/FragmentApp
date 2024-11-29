@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.FragmentHomeBinding
 import com.example.fragmentapp.ui.main.adapter.UserAdapter
-import com.example.fragmentapp.viewmodel.UserViewModel
+import com.example.fragmentapp.viewmodel.user.UserViewModel
 
 open class HomeFragment : Fragment() {
 

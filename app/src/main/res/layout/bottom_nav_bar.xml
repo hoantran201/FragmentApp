@@ -9,7 +9,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_weight="1"
-        android:background="@android:color/transparent"
+        android:backgroundTint="@color/button_color"
         android:contentDescription="@string/button_home"
         android:src="@drawable/btn_home_normal" />
 
@@ -18,7 +18,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_weight="1"
-        android:background="@android:color/transparent"
+        android:backgroundTint="@color/button_color"
         android:contentDescription="@string/button_notification"
         android:src="@drawable/btn_notification_normal" />
 
@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_weight="1"
-        android:background="@android:color/transparent"
+        android:backgroundTint="@color/button_color"
         android:contentDescription="@string/button_info"
         android:src="@drawable/btn_info_normal" />
 
@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_weight="1"
-        android:background="@android:color/transparent"
+        android:backgroundTint="@color/button_color"
         android:contentDescription="@string/button_setting"
         android:src="@drawable/btn_settings_normal" />
 </LinearLayout>

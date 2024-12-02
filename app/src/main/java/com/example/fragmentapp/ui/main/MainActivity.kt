@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(){
 
             it.bottomNavBar.btnHome.setOnClickListener {
                 selectViewPagerCurrentItem(0, false)
+
             }
 
             it.bottomNavBar.btnNotification.setOnClickListener {

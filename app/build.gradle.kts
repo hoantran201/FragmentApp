@@ -67,6 +67,12 @@ dependencies {
     implementation(libs.androidx.viewpager2)
     implementation(libs.koin.android)
 
+    implementation (libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+
+
+
 
 
 

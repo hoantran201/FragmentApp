@@ -17,4 +17,6 @@
     <string name="edt_name">Name</string>
     <string name="edt_age">Age</string>
     <string name="job_name">Job Name</string>
+    <string name="tile">Title</string>
+    <string name="body">Body</string>
 </resources>

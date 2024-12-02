@@ -64,6 +64,7 @@ class InfoFragment : Fragment() {
             jobViewModel.addJobData(name,jobName)
 
             txtName.text.clear()
+            txtJobName.text.clear()
         }
     }
 }

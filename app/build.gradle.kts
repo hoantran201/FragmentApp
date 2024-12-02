@@ -71,6 +71,8 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
 
+    implementation(libs.play.services.ads)
+
 
 
 

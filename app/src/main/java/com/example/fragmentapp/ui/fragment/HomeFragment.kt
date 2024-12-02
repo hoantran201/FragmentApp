@@ -9,17 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.FragmentHomeBinding
-import com.example.fragmentapp.ui.main.adapter.UserAdapter
+import com.example.fragmentapp.ui.adapter.UserAdapter
 import com.example.fragmentapp.viewmodel.user.UserViewModel
 
 open class HomeFragment : Fragment() {
 
     private var binding: FragmentHomeBinding? = null
-    private var recyclerView: RecyclerView? =null
-
-    private val userViewModel: UserViewModel by viewModels()
+    private val userViewModel by viewModels<UserViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,8 +29,7 @@ open class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.let {
-
-            recyclerView = binding?.rvUser
+            var recyclerView = binding?.rvUser
             recyclerView?.layoutManager = LinearLayoutManager(requireContext())
 
             userViewModel.getUsers().observe(viewLifecycleOwner, Observer { users ->
@@ -48,13 +44,13 @@ open class HomeFragment : Fragment() {
     }
 
     fun addUser() {
-        binding?.let{
+        binding?.let {
 
             var txtName: EditText = it.formInfo.edtName
             var txtAge: EditText = it.formInfo.edtAge
 
             var name = txtName.text.toString()
-            var age = txtAge.text.toString().toIntOrNull()?:run{18}
+            var age = txtAge.text.toString().toIntOrNull() ?: run { 18 }
             userViewModel.setUser(name, age)
 
             txtName.text.clear()

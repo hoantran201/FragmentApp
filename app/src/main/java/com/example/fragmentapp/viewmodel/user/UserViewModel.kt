@@ -20,8 +20,9 @@ class UserViewModel : ViewModel() {
         usersLiveData.postValue(userList)
         return usersLiveData
     }
+
     fun setUser(name: String, age: Int) {
-        var user = UserModel(name,age)
+        var user = UserModel(name, age)
         userList.add(user)
 
         usersLiveData.postValue(userList)

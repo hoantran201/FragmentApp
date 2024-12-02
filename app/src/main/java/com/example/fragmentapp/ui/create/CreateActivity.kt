@@ -10,7 +10,7 @@ class CreateActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activitiy_create)
-        val toolsBar = findViewById<View>(R.id.topToolsBar) // Đây là layout đã include
+        val toolsBar = findViewById<View>(R.id.topBar)
         val btnAdd = toolsBar.findViewById<ImageButton>(R.id.btnAdd)
 
         btnAdd.visibility = View.GONE

@@ -1,4 +1,4 @@
-package com.example.fragmentapp.api.repository
+package com.example.fragmentapp.viewmodel.post
 
 import com.example.fragmentapp.api.RetrofitClient
 import com.example.fragmentapp.model.PostModel

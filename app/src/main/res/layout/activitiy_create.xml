@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".ui.create.CreateActivity">
 
     <include
-        android:id="@+id/topToolsBar"
+        android:id="@+id/topBar"
         layout="@layout/top_tools_bar" />
 
     <LinearLayout
@@ -21,6 +21,6 @@
             android:layout_height="wrap_content"
             android:text="@string/create"
             android:textColor="@color/red"
-            android:textSize="60sp" />
+            android:textSize="@dimen/_60sp" />
     </LinearLayout>
 </LinearLayout>

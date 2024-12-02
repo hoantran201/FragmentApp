@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/tileName"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/edt_name"
-        android:textSize="18sp"
+        android:textSize="@dimen/_18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,11 +21,11 @@
 
     <TextView
         android:id="@+id/tileJob"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/job_name"
-        android:textSize="18sp"
+        android:textSize="@dimen/_18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/tileName"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvInfo"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/_0dp"
         app:layout_constraintBottom_toTopOf="@id/formInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tileName" />
@@ -44,8 +44,7 @@
         layout="@layout/form_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="@dimen/_80dp"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

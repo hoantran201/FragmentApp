@@ -1,11 +1,13 @@
 package com.example.fragmentapp.viewmodel.job
 
 import com.example.fragmentapp.model.JobModel
-import com.example.fragmentapp.model.service.JobService
+import com.example.fragmentapp.service.JobService
+
 interface JobRepository {
     fun getJob(): List<JobModel>
     fun addJob(name: String, jobName: String): List<JobModel>
 }
+
 class JobRepositoryImpl(jobService: JobService) : JobRepository {
 
     var jobList = jobService.jobList

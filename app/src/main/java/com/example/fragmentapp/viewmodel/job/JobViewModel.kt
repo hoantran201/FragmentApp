@@ -10,7 +10,6 @@ class JobViewModel(private val jobRepository: JobRepository) : ViewModel() {
     private val jobLiveData: MutableLiveData<List<JobModel>> = MutableLiveData()
 
 
-
     fun getJobData(): LiveData<List<JobModel>> {
         jobLiveData.postValue(jobRepository.getJob())
         return jobLiveData

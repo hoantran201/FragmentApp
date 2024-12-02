@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/btnBack"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
         android:backgroundTint="@color/button_color"
         android:contentDescription="@string/button_back"
         android:src="@drawable/btn_back_normal"
@@ -19,8 +19,8 @@
 
     <ImageButton
         android:id="@+id/btnAdd"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
         android:backgroundTint="@color/button_color"
         android:contentDescription="@string/button_add"
         android:src="@drawable/btn_add_normal"

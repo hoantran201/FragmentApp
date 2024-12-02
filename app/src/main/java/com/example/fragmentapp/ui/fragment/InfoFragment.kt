@@ -9,16 +9,14 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.FragmentInfoBinding
-import com.example.fragmentapp.ui.main.adapter.InfoAdapter
+import com.example.fragmentapp.ui.adapter.InfoAdapter
 import com.example.fragmentapp.viewmodel.job.JobViewModel
 import org.koin.android.ext.android.inject
 
 class InfoFragment : Fragment() {
 
     private var binding: FragmentInfoBinding? = null
-    private var recyclerView: RecyclerView? = null
     private val jobViewModel: JobViewModel by inject()
 
     override fun onCreateView(
@@ -34,16 +32,14 @@ class InfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.let {
 
-            recyclerView = binding?.rvInfo
-            recyclerView?.layoutManager = LinearLayoutManager(requireContext())
+            var recyclerView = binding?.rvInfo
+            recyclerView?.layoutManager = LinearLayoutManager(context)
             binding?.formInfo?.edtAge?.hint = "Job Name"
             binding?.formInfo?.edtAge?.inputType = InputType.TYPE_CLASS_TEXT
             binding?.formInfo?.edtName?.hint = "Name"
 
-
             jobViewModel.getJobData().observe(viewLifecycleOwner, Observer { jobs ->
-                val adapter = InfoAdapter(jobs)
-                recyclerView?.adapter = adapter
+                recyclerView?.adapter = InfoAdapter(jobs)
             })
 
             it.formInfo.btnSubmit.setOnClickListener {
@@ -61,7 +57,7 @@ class InfoFragment : Fragment() {
             var jobName = txtJobName.text.toString()
             var name = txtName.text.toString()
 
-            jobViewModel.addJobData(name,jobName)
+            jobViewModel.addJobData(name, jobName)
 
             txtName.text.clear()
             txtJobName.text.clear()

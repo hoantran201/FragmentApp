@@ -1,4 +1,4 @@
-package com.example.fragmentapp.ui.main.adapter
+package com.example.fragmentapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.ItemPostBinding
 import com.example.fragmentapp.model.PostModel
 
-class PostAdapter(private val posts: List<PostModel>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+class PostAdapter(private val posts: List<PostModel>) :
+    RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -19,7 +20,8 @@ class PostAdapter(private val posts: List<PostModel>) : RecyclerView.Adapter<Pos
 
     override fun getItemCount(): Int = posts.size
 
-    inner class PostViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class PostViewHolder(private val binding: ItemPostBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(post: PostModel) {
             binding.tvTitle.text = post.title

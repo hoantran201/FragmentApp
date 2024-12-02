@@ -1,4 +1,4 @@
-package com.example.fragmentapp.model.service
+package com.example.fragmentapp.service
 
 import com.example.fragmentapp.model.JobModel
 

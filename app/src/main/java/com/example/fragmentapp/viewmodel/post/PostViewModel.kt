@@ -1,8 +1,7 @@
-package com.example.fragmentapp.viewmodel.api
+package com.example.fragmentapp.viewmodel.post
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.example.fragmentapp.api.repository.PostRepository
 
 class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edtFirstName"
+        android:layout_width="@dimen/_300dp"
+        android:layout_height="@dimen/_48sp"
+        android:layout_marginBottom="@dimen/_16sp"
+        android:autofillHints="Enter First Name"
+        android:hint="@string/edt_first_name"
+        android:inputType="text"
+        android:textSize="@dimen/_18sp" />
+
+    <EditText
+        android:id="@+id/edtLastName"
+        android:layout_width="@dimen/_300dp"
+        android:layout_height="@dimen/_48sp"
+        android:layout_marginBottom="@dimen/_16sp"
+        android:autofillHints="Enter Last Name"
+        android:hint="@string/edt_last_name"
+        android:inputType="text"
+        android:textSize="@dimen/_18sp" />
+
+    <EditText
+        android:id="@+id/edtAge"
+        android:layout_width="@dimen/_300dp"
+        android:layout_height="@dimen/_48sp"
+        android:layout_marginBottom="@dimen/_16sp"
+        android:autofillHints="Enter Age"
+        android:hint="@string/edt_age"
+        android:inputType="text"
+        android:textSize="@dimen/_18sp" />
+
+    <EditText
+        android:id="@+id/edtJob"
+        android:layout_width="@dimen/_300dp"
+        android:layout_height="@dimen/_48sp"
+        android:layout_marginBottom="@dimen/_16sp"
+        android:autofillHints="Enter Job Name"
+        android:hint="@string/job_name"
+        android:inputType="text"
+        android:textSize="@dimen/_18sp" />
+
+    <Button
+        android:id="@+id/btnAddData"
+        android:layout_width="@dimen/_160dp"
+        android:layout_height="@dimen/_60dp"
+        android:text="@string/button_submit" />
+</LinearLayout>

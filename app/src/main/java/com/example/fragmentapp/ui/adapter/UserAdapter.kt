@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.ItemUserBinding
 import com.example.fragmentapp.model.UserModel
 
-class UserAdapter(private val users: List<UserModel>) :
+class UserAdapter(private var users: List<UserModel>) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -31,5 +31,9 @@ class UserAdapter(private val users: List<UserModel>) :
             binding.txtName.text = user.name
             binding.txtAge.text = user.age.toString()
         }
+    }
+
+    fun updateUser(usersList: List<UserModel>) {
+        users = usersList
     }
 }

@@ -7,8 +7,7 @@ import com.example.fragmentapp.model.JobModel
 
 class JobViewModel(private val jobRepository: JobRepository) : ViewModel() {
 
-    private val jobLiveData: MutableLiveData<List<JobModel>> = MutableLiveData()
-
+    private val jobLiveData = MutableLiveData<List<JobModel>>()
 
     fun getJobData(): LiveData<List<JobModel>> {
         jobLiveData.postValue(jobRepository.getJob())

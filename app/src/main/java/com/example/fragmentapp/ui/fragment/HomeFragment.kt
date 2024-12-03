@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragmentapp.databinding.FragmentHomeBinding
+import com.example.fragmentapp.model.UserModel
 import com.example.fragmentapp.ui.adapter.UserAdapter
 import com.example.fragmentapp.viewmodel.user.UserViewModel
 
@@ -17,6 +18,8 @@ open class HomeFragment : Fragment() {
 
     private var binding: FragmentHomeBinding? = null
     private val userViewModel by viewModels<UserViewModel>()
+    private var userList = emptyList<UserModel>()
+    private val userAdapter by lazy  (LazyThreadSafetyMode.NONE) { UserAdapter(userList) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,12 +32,13 @@ open class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.let {
-            var recyclerView = binding?.rvUser
-            recyclerView?.layoutManager = LinearLayoutManager(requireContext())
+            var recyclerView = it.rvUser
+            recyclerView.layoutManager = LinearLayoutManager(context)
 
             userViewModel.getUsers().observe(viewLifecycleOwner, Observer { users ->
-                val adapter = UserAdapter(users)
-                recyclerView?.adapter = adapter
+                recyclerView.adapter = userAdapter
+                userAdapter.updateUser(users)
+
             })
 
             it.formInfo.btnSubmit.setOnClickListener {

@@ -29,11 +29,11 @@ class NotificationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.let {
-            var recyclerView = binding?.rvNotify
-            recyclerView?.layoutManager = LinearLayoutManager(context)
+            var recyclerView = it.rvNotify
+            recyclerView.layoutManager = LinearLayoutManager(context)
 
             postViewModel.posts.observe(viewLifecycleOwner, Observer { posts ->
-                recyclerView?.adapter = PostAdapter(posts)
+                recyclerView.adapter = PostAdapter(posts)
             })
         }
     }

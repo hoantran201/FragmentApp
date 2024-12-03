@@ -32,14 +32,14 @@ class InfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.let {
 
-            var recyclerView = binding?.rvInfo
-            recyclerView?.layoutManager = LinearLayoutManager(context)
-            binding?.formInfo?.edtAge?.hint = "Job Name"
-            binding?.formInfo?.edtAge?.inputType = InputType.TYPE_CLASS_TEXT
-            binding?.formInfo?.edtName?.hint = "Name"
+            var recyclerView = it.rvInfo
+            recyclerView.layoutManager = LinearLayoutManager(context)
+            it.formInfo.edtAge.hint = "Job Name"
+            it.formInfo.edtAge.inputType = InputType.TYPE_CLASS_TEXT
+            it.formInfo.edtName.hint = "Name"
 
             jobViewModel.getJobData().observe(viewLifecycleOwner, Observer { jobs ->
-                recyclerView?.adapter = InfoAdapter(jobs)
+                recyclerView.adapter = InfoAdapter(jobs)
             })
 
             it.formInfo.btnSubmit.setOnClickListener {

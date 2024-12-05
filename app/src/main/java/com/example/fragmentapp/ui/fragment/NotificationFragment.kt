@@ -12,7 +12,6 @@ import com.example.fragmentapp.databinding.FragmentNotificationBinding
 import com.example.fragmentapp.ui.adapter.PostAdapter
 import com.example.fragmentapp.viewmodel.post.PostViewModel
 import org.koin.android.ext.android.inject
-import java.io.IOException
 
 class NotificationFragment : Fragment() {
 
@@ -37,9 +36,5 @@ class NotificationFragment : Fragment() {
                 recyclerView.adapter = PostAdapter(posts)
             })
         }
-    }
-
-    fun showToast(error: String) {
-        Toast.makeText(context, error, Toast.LENGTH_LONG).show()
     }
 }

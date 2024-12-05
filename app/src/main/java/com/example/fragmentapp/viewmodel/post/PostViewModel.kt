@@ -3,7 +3,6 @@ package com.example.fragmentapp.viewmodel.post
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.example.fragmentapp.model.PostModel
 import java.net.UnknownHostException
 
 class PostViewModel(private val postRepository: PostRepository) : ViewModel() {

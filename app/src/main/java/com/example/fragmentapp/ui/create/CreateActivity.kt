@@ -1,12 +1,13 @@
 package com.example.fragmentapp.ui.create
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import com.example.fragmentapp.databinding.ActivityCreateBinding
+import com.example.fragmentapp.ui.reward.RewardActivity
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -31,11 +32,12 @@ class CreateActivity : ComponentActivity() {
         binding?.let {
             setContentView(it.root)
 
-            val toolsBar = it.topBar
-            val btnAdd = it.topBar.btnAdd
-            btnAdd.visibility = View.GONE
+            it.topBar.btnAdd.setOnClickListener {
+                val intent = Intent(this, RewardActivity::class.java)
+                startActivity(intent)
+            }
 
-            toolsBar.btnBack.setOnClickListener {
+            it.topBar.btnBack.setOnClickListener {
                 onBackPressed()
                 finish()
             }
@@ -61,7 +63,7 @@ class CreateActivity : ComponentActivity() {
         val adLoader = AdLoader.Builder(this, "ca-app-pub-3940256099942544/1044960115")
             .forNativeAd { nativeAd ->
                 this.nativeAd = nativeAd
-                if(this.nativeAd !=null){
+                if (this.nativeAd != null) {
                     populateNativeAdView(nativeAd)
                 } else print("No native video")
             }

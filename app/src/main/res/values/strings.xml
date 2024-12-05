@@ -22,4 +22,6 @@
     <string name="tile">Title</string>
     <string name="body">Body</string>
     <string name="action">Action</string>
+    <string name="reward">Reward: 0 USD</string>
+    <string name="btn_reward">Reward</string>
 </resources>

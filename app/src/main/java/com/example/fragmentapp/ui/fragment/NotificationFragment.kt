@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import com.example.fragmentapp.databinding.FragmentNotificationBinding
 import com.example.fragmentapp.ui.adapter.PostAdapter
 import com.example.fragmentapp.viewmodel.post.PostViewModel
 import org.koin.android.ext.android.inject
+import java.io.IOException
 
 class NotificationFragment : Fragment() {
 
@@ -31,10 +33,13 @@ class NotificationFragment : Fragment() {
         binding?.let {
             var recyclerView = it.rvNotify
             recyclerView.layoutManager = LinearLayoutManager(context)
-
-            postViewModel.posts.observe(viewLifecycleOwner, Observer { posts ->
+            postViewModel.post.observe(viewLifecycleOwner, Observer { posts ->
                 recyclerView.adapter = PostAdapter(posts)
             })
         }
+    }
+
+    fun showToast(error: String) {
+        Toast.makeText(context, error, Toast.LENGTH_LONG).show()
     }
 }

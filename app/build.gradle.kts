@@ -76,10 +76,8 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
-
-
-
-
+    implementation(libs.play.services.ads)
+    implementation(libs.androidx.lifecycle.process)
 
 
 }

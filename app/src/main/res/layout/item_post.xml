@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/tvTitle"
+        style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tile"
@@ -15,6 +16,7 @@
 
     <TextView
         android:id="@+id/tvBody"
+        style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/body"

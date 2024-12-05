@@ -1,23 +1,98 @@
 package com.example.fragmentapp.ui.create
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.ImageButton
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.ComponentActivity
-import com.example.fragmentapp.R
+import com.example.fragmentapp.databinding.ActivityCreateBinding
+import com.google.android.gms.ads.AdLoader
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.nativead.MediaView
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdOptions
+import com.google.android.gms.ads.nativead.NativeAdView
 
 class CreateActivity : ComponentActivity() {
+
+    private var mAdView: AdView? = null
+    private var nativeAd: NativeAd? = null
+    private var nativeAdView: NativeAdView? = null
+    private var mediaView: MediaView? = null
+    private var binding: ActivityCreateBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activitiy_create)
-        val toolsBar = findViewById<View>(R.id.topBar)
-        val btnAdd = toolsBar.findViewById<ImageButton>(R.id.btnAdd)
 
-        btnAdd.visibility = View.GONE
+        binding = ActivityCreateBinding.inflate(layoutInflater)
+        binding?.let {
+            setContentView(it.root)
 
-        toolsBar.findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
-            onBackPressed()
-            finish()
+            val toolsBar = it.topBar
+            val btnAdd = it.topBar.btnAdd
+            btnAdd.visibility = View.GONE
+
+            toolsBar.btnBack.setOnClickListener {
+                onBackPressed()
+                finish()
+            }
+            mAdView = it.adBanner
+
+            adBanner()
+            loadNativeAd()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mAdView?.destroy()
+    }
+
+    fun adBanner() {
+        val adRequest = AdRequest.Builder().build()
+        mAdView?.loadAd(adRequest)
+    }
+
+    fun loadNativeAd() {
+        val adRequest = AdRequest.Builder().build()
+        val adLoader = AdLoader.Builder(this, "ca-app-pub-3940256099942544/1044960115")
+            .forNativeAd { nativeAd ->
+                this.nativeAd = nativeAd
+                if(this.nativeAd !=null){
+                    populateNativeAdView(nativeAd)
+                } else print("No native video")
+            }
+            .withAdListener(object : com.google.android.gms.ads.AdListener() {
+                override fun onAdFailedToLoad(error: LoadAdError) {
+                    Log.e("NativeAd", " ${error.message} ")
+                }
+            })
+            .withNativeAdOptions(NativeAdOptions.Builder().build())
+            .build()
+
+        adLoader.loadAd(adRequest)
+    }
+
+    fun populateNativeAdView(nativeAd: NativeAd) {
+        binding?.let {
+            val bind = it.iclAdsVideo
+            nativeAdView = bind.ntAdView
+            mediaView = bind.mdVideo
+
+            nativeAdView?.mediaView = mediaView
+
+            nativeAdView?.headlineView = bind.tvHeadline
+            nativeAdView?.bodyView = bind.tvBody
+            nativeAdView?.callToActionView = bind.btnAction
+
+            (nativeAdView?.headlineView as TextView).text = nativeAd.headline
+            (nativeAdView?.bodyView as TextView).text = nativeAd.body
+            (nativeAdView?.callToActionView as Button).text = nativeAd.callToAction
+
+            nativeAdView?.setNativeAd(nativeAd)
         }
     }
 }

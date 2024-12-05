@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white"/> <!-- Nền trong suốt -->
+    <size android:height="48dp"/> <!-- Chiều cao của EditText -->
+    <stroke
+        android:color="#808080"
+        android:width="1dp"/>
+    <corners android:radius="@dimen/_16sp"/>
+</shape>

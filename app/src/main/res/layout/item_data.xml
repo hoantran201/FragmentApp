@@ -6,22 +6,27 @@
 
     <TextView
         android:id="@+id/txtFirstName"
+        style="@style/CustomText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:gravity="center"
         android:text="@string/edt_first_name"
         android:textSize="@dimen/_16sp" />
+
     <TextView
         android:id="@+id/txtLastName"
+        style="@style/CustomText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:gravity="center"
         android:text="@string/edt_last_name"
         android:textSize="@dimen/_16sp" />
+
     <TextView
         android:id="@+id/txtAge"
+        style="@style/CustomText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -31,6 +36,7 @@
 
     <TextView
         android:id="@+id/txtJob"
+        style="@style/CustomText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"

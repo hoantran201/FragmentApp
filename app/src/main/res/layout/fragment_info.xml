@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/tileName"
+        style="@style/CustomText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -21,6 +22,7 @@
 
     <TextView
         android:id="@+id/tileJob"
+        style="@style/CustomText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:gravity="center"

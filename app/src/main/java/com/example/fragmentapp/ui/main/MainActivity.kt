@@ -15,8 +15,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         binding?.let {
             setContentView(it.root)
@@ -60,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         viewPager?.setCurrentItem(index, isVisible)
     }
 
-
+    @Deprecated("")
     override fun onBackPressed() {
         if (viewPager?.currentItem == 0) {
             super.onBackPressed()

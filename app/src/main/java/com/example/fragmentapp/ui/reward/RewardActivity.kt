@@ -36,6 +36,13 @@ class RewardActivity : ComponentActivity() {
             val toolsBar = it.topBar
             val btnAdd = it.topBar.btnAdd
             btnAdd.visibility = View.GONE
+            var prBar = it.iclPrBar.prBar
+
+            CoroutineScope(Dispatchers.Main).launch {
+                prBar.visibility = View.VISIBLE
+                delay(5000)
+                prBar.visibility = View.GONE
+            }
 
             toolsBar.btnBack.setOnClickListener {
                 onBackPressed()
@@ -106,7 +113,7 @@ class RewardActivity : ComponentActivity() {
         rewardedAd?.let { ad ->
             ad.show(this, OnUserEarnedRewardListener { rewardItem ->
                 print("\n lỗi rồi $rewardedAd \n")
-                point = point + 10000
+                point += 10000
                 setPointView()
                 Log.d(tag, "User earned the reward.")
             })

@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import com.example.fragmentapp.InterstitialManager
 import com.example.fragmentapp.databinding.ActivityCreateBinding
 import com.example.fragmentapp.ui.reward.RewardActivity
 import com.google.android.gms.ads.AdLoader
@@ -27,12 +28,14 @@ class CreateActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val interstitialManager = InterstitialManager(this)
 
         binding = ActivityCreateBinding.inflate(layoutInflater)
         binding?.let {
             setContentView(it.root)
 
             it.topBar.btnAdd.setOnClickListener {
+                interstitialManager.interstitialShow()
                 val intent = Intent(this, RewardActivity::class.java)
                 startActivity(intent)
             }

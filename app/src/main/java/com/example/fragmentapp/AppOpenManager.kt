@@ -3,6 +3,8 @@ package com.example.fragmentapp
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import com.example.fragmentapp.ui.main.MainActivity
 import com.google.android.gms.ads.AdError
@@ -10,11 +12,6 @@ import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class AppOpenManager(private val myApplication: MyApplication) :
     Application.ActivityLifecycleCallbacks {
@@ -75,15 +72,9 @@ class AppOpenManager(private val myApplication: MyApplication) :
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
     override fun onActivityStarted(activity: Activity) {
         if (activity is MainActivity) {
-            val backgroundScope = CoroutineScope(Dispatchers.IO)
-            backgroundScope.launch {
-                delay(4000)
-                if (!isShowingAd && appOpenAd != null) {
-                    withContext(Dispatchers.Main) {
-                        showAdIfAvailable(activity)
-                    }
-                }
-            }
+            Handler(Looper.getMainLooper()).postDelayed({
+                if (!isShowingAd && appOpenAd != null) showAdIfAvailable(activity)
+            }, 3000)
         }
     }
 

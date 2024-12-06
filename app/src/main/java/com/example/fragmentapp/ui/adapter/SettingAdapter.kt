@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.ItemDataBinding
 import com.example.fragmentapp.entity.User
-import com.example.fragmentapp.model.UserModel
 
 class SettingAdapter(private var users: List<User>) :
     RecyclerView.Adapter<SettingAdapter.SettingViewHolder>() {
@@ -32,9 +31,5 @@ class SettingAdapter(private var users: List<User>) :
             binding.txtAge.text = user.age
             binding.txtJob.text = user.job
         }
-    }
-
-    fun updateData(usersList: List<User>) {
-        users = usersList
     }
 }

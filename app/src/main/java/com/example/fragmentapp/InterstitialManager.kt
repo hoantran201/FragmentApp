@@ -1,7 +1,8 @@
 package com.example.fragmentapp
 
 import android.app.Activity
-import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
@@ -9,34 +10,25 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class InterstitialManager (private val context: Context) {
+class InterstitialManager(private val activity: Activity) {
 
     private var mInterstitialAd: InterstitialAd? = null
     private val tag = "MainActivity"
 
-
-    fun interstitialShow(){
+    fun interstitialShow() {
         loadAdd()
-        CoroutineScope(Dispatchers.IO).launch {
-            delay(4000)
-            withContext(Dispatchers.Main) {
-                populateAdView()
-                showAd()
-            }
-        }
+        Handler(Looper.getMainLooper()).postDelayed({
+            populateAdView()
+            showAd()
+        }, 3000)
     }
 
     fun loadAdd() {
         val adRequest = AdRequest.Builder().build()
 
         InterstitialAd.load(
-            context,
+            activity,
             "ca-app-pub-3940256099942544/1033173712",
             adRequest,
             object : InterstitialAdLoadCallback() {
@@ -85,10 +77,9 @@ class InterstitialManager (private val context: Context) {
 
     fun showAd() {
         if (mInterstitialAd != null) {
-            mInterstitialAd?.show(context as Activity)
+            mInterstitialAd?.show(activity)
         } else {
             Log.d("TAG", "The interstitial ad wasn't ready yet.")
         }
     }
-
 }

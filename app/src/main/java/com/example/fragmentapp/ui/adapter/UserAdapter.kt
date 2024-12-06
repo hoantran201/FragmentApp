@@ -32,8 +32,4 @@ class UserAdapter(private var users: List<UserModel>) :
             binding.txtAge.text = user.age.toString()
         }
     }
-
-    fun updateUser(usersList: List<UserModel>) {
-        users = usersList
-    }
 }

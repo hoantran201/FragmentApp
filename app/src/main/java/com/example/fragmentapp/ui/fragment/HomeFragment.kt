@@ -1,5 +1,6 @@
 package com.example.fragmentapp.ui.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +19,7 @@ open class HomeFragment : Fragment() {
 
     private var binding: FragmentHomeBinding? = null
     private val userViewModel by viewModels<UserViewModel>()
-    private var userList = emptyList<UserModel>()
+    private var userList = mutableListOf<UserModel>()
     private val userAdapter by lazy  (LazyThreadSafetyMode.NONE) { UserAdapter(userList) }
 
     override fun onCreateView(
@@ -29,16 +30,20 @@ open class HomeFragment : Fragment() {
         return binding?.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.let {
             var recyclerView = it.rvUser
             recyclerView.layoutManager = LinearLayoutManager(context)
+            recyclerView.adapter = userAdapter
 
             userViewModel.getUsers().observe(viewLifecycleOwner, Observer { users ->
-                recyclerView.adapter = userAdapter
-                userAdapter.updateUser(users)
-
+                userList.apply {
+                    clear()
+                    addAll(users)
+                }
+                userAdapter.notifyDataSetChanged()
             })
 
             it.formInfo.btnSubmit.setOnClickListener {

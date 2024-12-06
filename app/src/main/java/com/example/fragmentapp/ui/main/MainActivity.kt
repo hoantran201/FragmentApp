@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         viewPager?.setCurrentItem(index, isVisible)
     }
 
-    @Deprecated("")
     override fun onBackPressed() {
         if (viewPager?.currentItem == 0) {
             super.onBackPressed()

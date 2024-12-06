@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.ItemUserBinding
 import com.example.fragmentapp.model.JobModel
 
-class InfoAdapter(private val jobs: List<JobModel>) :
+class InfoAdapter(private var jobs: List<JobModel>) :
     RecyclerView.Adapter<InfoAdapter.JobViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {

@@ -2,6 +2,8 @@ package com.example.fragmentapp.ui.reward
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import androidx.activity.ComponentActivity
@@ -17,7 +19,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class RewardActivity : ComponentActivity() {
 
@@ -40,7 +41,7 @@ class RewardActivity : ComponentActivity() {
 
             CoroutineScope(Dispatchers.Main).launch {
                 prBar.visibility = View.VISIBLE
-                delay(5000)
+                delay(3000)
                 prBar.visibility = View.GONE
             }
 
@@ -51,16 +52,12 @@ class RewardActivity : ComponentActivity() {
 
             it.btnReward.setOnClickListener {
                 loadAd()
-                CoroutineScope(Dispatchers.IO).launch {
-                    delay(5000)
-                    withContext(Dispatchers.Main) {
-                        populateRewardAdView()
-                        showRewardAd()
-                    }
-                }
+                Handler(Looper.getMainLooper()).postDelayed({
+                    populateRewardAdView()
+                    showRewardAd()
+                }, 3500)
             }
         }
-
     }
 
     fun loadAd() {

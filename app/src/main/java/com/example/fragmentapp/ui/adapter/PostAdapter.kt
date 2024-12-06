@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentapp.databinding.ItemPostBinding
 import com.example.fragmentapp.model.PostModel
 
-class PostAdapter(private val posts: List<PostModel>) :
+class PostAdapter(private var posts: List<PostModel>) :
     RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {

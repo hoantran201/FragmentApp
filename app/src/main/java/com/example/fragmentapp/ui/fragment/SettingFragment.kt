@@ -1,5 +1,6 @@
 package com.example.fragmentapp.ui.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +19,7 @@ class SettingFragment : Fragment() {
 
     private var binding: FragmentSettingBinding? = null
     private val settingViewModel by inject<SettingViewModel>()
-    private var userList = emptyList<User>()
+    private var userList = mutableListOf<User>()
     private val settingAdapter by lazy(LazyThreadSafetyMode.NONE) { SettingAdapter(userList) }
 
     override fun onCreateView(
@@ -28,23 +29,26 @@ class SettingFragment : Fragment() {
         return binding?.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.let {
             var recyclerView = it.rvSetting
             recyclerView.layoutManager = LinearLayoutManager(context)
+            recyclerView.adapter = settingAdapter
 
             settingViewModel.allUsers.observe(viewLifecycleOwner, Observer { users ->
-                recyclerView.adapter = settingAdapter
-                settingAdapter.updateData(users)
+                userList.apply {
+                    clear()
+                    addAll(users)
+                }
+                settingAdapter.notifyDataSetChanged()
             })
 
             it.formData.btnAddData.setOnClickListener {
                 addData()
             }
-
-
         }
     }
 
@@ -74,6 +78,5 @@ class SettingFragment : Fragment() {
             txtAge.text.clear()
             txtJob.text.clear()
         }
-
     }
 }

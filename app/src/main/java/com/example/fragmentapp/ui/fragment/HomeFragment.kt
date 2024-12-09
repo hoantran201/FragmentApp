@@ -20,7 +20,7 @@ open class HomeFragment : Fragment() {
     private var binding: FragmentHomeBinding? = null
     private val userViewModel by viewModels<UserViewModel>()
     private var userList = mutableListOf<UserModel>()
-    private val userAdapter by lazy  (LazyThreadSafetyMode.NONE) { UserAdapter(userList) }
+    private val userAdapter by lazy(LazyThreadSafetyMode.NONE) { UserAdapter(userList) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -7,52 +7,52 @@
 
     <EditText
         android:id="@+id/edtFirstName"
+        style="@style/CustomEditText"
         android:layout_width="@dimen/_300dp"
         android:layout_height="@dimen/_48sp"
         android:layout_marginBottom="@dimen/_16sp"
-        style="@style/CustomEditText"
-        android:background="@drawable/edt_border"
         android:autofillHints="Enter First Name"
+        android:background="@drawable/edt_border"
         android:hint="@string/edt_first_name"
         android:inputType="text"
         android:textSize="@dimen/_18sp" />
 
     <EditText
         android:id="@+id/edtLastName"
+        style="@style/CustomEditText"
         android:layout_width="@dimen/_300dp"
         android:layout_height="@dimen/_48sp"
         android:layout_marginBottom="@dimen/_16sp"
-        style="@style/CustomEditText"
-        android:background="@drawable/edt_border"
         android:autofillHints="Enter Last Name"
+        android:background="@drawable/edt_border"
         android:hint="@string/edt_last_name"
         android:inputType="text"
         android:textSize="@dimen/_18sp" />
 
     <EditText
         android:id="@+id/edtAge"
+        style="@style/CustomEditText"
         android:layout_width="@dimen/_300dp"
         android:layout_height="@dimen/_48sp"
         android:layout_marginBottom="@dimen/_16sp"
-        style="@style/CustomEditText"
-        android:background="@drawable/edt_border"
         android:autofillHints="Enter Age"
+        android:background="@drawable/edt_border"
         android:hint="@string/edt_age"
-        android:textColor="@color/black"
         android:inputType="text"
+        android:textColor="@color/black"
         android:textSize="@dimen/_18sp" />
 
     <EditText
         android:id="@+id/edtJob"
+        style="@style/CustomEditText"
         android:layout_width="@dimen/_300dp"
         android:layout_height="@dimen/_48sp"
-        android:textColor="@color/black"
         android:layout_marginBottom="@dimen/_16sp"
-        style="@style/CustomEditText"
-        android:background="@drawable/edt_border"
         android:autofillHints="Enter Job Name"
+        android:background="@drawable/edt_border"
         android:hint="@string/job_name"
         android:inputType="text"
+        android:textColor="@color/black"
         android:textSize="@dimen/_18sp" />
 
     <Button

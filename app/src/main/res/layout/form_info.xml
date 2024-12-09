@@ -7,15 +7,15 @@
 
     <EditText
         android:id="@+id/edtName"
+        style="@style/CustomEditText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="@dimen/_50dp"
         android:layout_marginBottom="@dimen/_16dp"
-        style="@style/CustomEditText"
-        android:background="@drawable/edt_border"
         android:autofillHints="Enter Full Name"
+        android:background="@drawable/edt_border"
         android:hint="@string/edt_name"
-        android:textColor="@color/black"
         android:inputType="text"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/edtAge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +23,12 @@
 
     <EditText
         android:id="@+id/edtAge"
+        style="@style/CustomEditText"
         android:layout_width="@dimen/_0dp"
         android:layout_height="@dimen/_50dp"
         android:layout_marginBottom="@dimen/_24dp"
-        style="@style/CustomEditText"
-        android:background="@drawable/edt_border"
         android:autofillHints="Enter Age"
+        android:background="@drawable/edt_border"
         android:hint="@string/edt_age"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@id/btnSubmit"
